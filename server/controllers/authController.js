@@ -74,7 +74,14 @@ export const loginUser = async (req, res) => {
   }
 };
 
-export const logoutUser = async (req, res) => {};
+export const logoutUser = async (req, res) => {
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
+  return res.status(200).json({ message: "User logged out" });
+};
 
 export const validateAccessToken = async (req, res) => {
   const accessToken = req.cookies.accessToken;
