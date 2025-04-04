@@ -1,0 +1,18 @@
+POST https://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "bmassa56@gmail.com",
+    "password": "Brayj3156$"
+}
+###
+POST https://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "bmassa56@gmail.com",
+    "password": "Brayj3156$"
+}
+
+###
+GET https://localhost:4000/api/auth/validate-auth
